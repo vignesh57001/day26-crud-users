@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserCreate";
 
 function TopBar() {
+  const { user } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
       <button
@@ -64,37 +73,9 @@ function TopBar() {
           </div>
         </li>
 
-        <li className="nav-item dropdown no-arrow mx-1">
-          <a
-            className="nav-link dropdown-toggle"
-            href="#"
-            id="alertsDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i className="fas fa-bell fa-fw"></i>
-
-            <span className="badge badge-danger badge-counter">6+</span>
-          </a>
-        </li>
-
-        <li className="nav-item dropdown no-arrow mx-1">
-          <a
-            className="nav-link dropdown-toggle"
-            href="#"
-            id="messagesDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i className="fas fa-envelope fa-fw"></i>
-
-            <span className="badge badge-danger badge-counter">9+</span>
-          </a>
-        </li>
+        <button onClick={handleLogout} className="btn">
+          Logout
+        </button>
 
         <div className="topbar-divider d-none d-sm-block"></div>
 
@@ -109,11 +90,11 @@ function TopBar() {
             aria-expanded="false"
           >
             <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-              Vignesh Menon
+              {user.username}
             </span>
             <img
               className="img-profile rounded-circle"
-              src="img/undraw_profile.svg"
+              src="https://picsum.photos/100/100"
             />
           </a>
         </li>
