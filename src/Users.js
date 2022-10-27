@@ -35,7 +35,7 @@ function Users() {
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 className="h3 mb-0 text-gray-800">Tables</h1>
           <Link
-            to={"/Create_Users"}
+            to={"/portal/Create_Users"}
             className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
           >
             <i className="fas fa-envelope fa-sm text-white-50"></i> Create User
@@ -100,13 +100,13 @@ function Users() {
                         <td>{users.phone}</td>
                         <td>
                           <Link
-                            to={`/User/${users.id}`}
+                            to={`/portal/User/${users.id}`}
                             className="btn btn-warning mr-1"
                           >
                             View
                           </Link>
                           <Link
-                            to={`/Create_Users`}
+                            to={`/portal/Create_Users`}
                             className="btn btn-success mr-1"
                           >
                             Edit

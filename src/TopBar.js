@@ -73,7 +73,7 @@ function TopBar() {
           </div>
         </li>
 
-        <button onClick={handleLogout} className="btn">
+        <button onClick={handleLogout} className="btn1 btn-sm btn-danger">
           Logout
         </button>
 
