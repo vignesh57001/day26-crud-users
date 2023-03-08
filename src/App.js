@@ -1,5 +1,4 @@
 import "./App.css";
-import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import DashBoard from "./DashBoard";
 import Create_Users from "./Create_Users";
@@ -19,7 +18,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/portal" element={<PortalLayout />}>
-          <Route path="SideBar" element={<SideBar />}></Route>
           <Route path="TopBar" element={<TopBar />}></Route>
           <Route path="DashBoard" element={<DashBoard />}></Route>
           <Route path="Users" element={<Users />}></Route>
